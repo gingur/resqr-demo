@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>resqr demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">resqr demo</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="mailto:troy.rhinehart@gmail.com">Email</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Output</h1>
+        <p><img src="/qr" alt="QR image" id="qrImage"/></p>
+    </div>
+</div>
+
+<div class="container">
+    <form role="form" id="demo">
+        <div class="row">
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Type</label>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrText" value="qr" checked> Text
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrSms" value="sms" disabled> SMS
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrMms" value="pdf" disabled> MMS
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrMail" value="mail" disabled> Email
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrPhone" value="phone" disabled> Phone
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrYouTube" value="youtube" disabled> YouTube
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrContact" value="contact" disabled> Contact
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrAddress" value="address" disabled> Address
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" id="qrLocation" value="location" disabled> Location
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="qrTextInput">Text</label>
+                    <input type="text" class="form-control" name="text" id="qrTextInput" placeholder="Text">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label>Format</label>
+                    <br/>
+                    <label class="radio-inline">
+                        <input type="radio" name="format" id="pngFormat" value="png" checked> PNG
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="format" id="svgFormat" value="svg"> SVG
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="format" id="pdfFormat" value="pdf" disabled> PDF
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="format" id="epsFormat" value="eps" disabled> EPS
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Error Level</label>
+                    <br/>
+                    <label class="radio-inline">
+                        <input type="radio" name="level" id="levelL" value="L" checked> 7% (L)
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="level" id="levelM" value="M"> 15% (M)
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="level" id="levelQ" value="Q"> 25% (Q)
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="level" id="levelH" value="H"> 30% (H)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="qrSize">Size</label>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="size" id="qrSize" value="5">
+                        <span class="input-group-addon">px per unit</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="qrMargin">Margin</label>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="margin" id="qrMargin" value="4">
+                        <span class="input-group-addon">px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Refresh</button>
+        </div>
+    </form>
+    <hr>
+
+    <footer>
+        <p>&copy; 2014</p>
+    </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

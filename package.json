@@ -1,0 +1,26 @@
+{
+  "name": "resqr-demo",
+  "version": "0.0.1",
+  "description": "Connect demo for resqr",
+  "author": "Troy Rhinehart <troy.rhinehart@gmail.com>",
+  "masterDocuments": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "jscs": "npm run jscs-src",
+    "jscs-src": "jscs index.js lib/ public/",
+    "jshint": "npm run jshint-src",
+    "jshint-src": "jshint index.js lib/ public/",
+    "lint": "npm run jshint && npm run jscs"
+  },
+  "dependencies": {
+    "compression": "^1.2.1",
+    "connect": "^3.3.3",
+    "qs": "^2.3.3",
+    "resqr": "^1.0.0",
+    "serve-static": "^1.7.1"
+  },
+  "devDependencies": {
+    "jscs": "~1.7.3",
+    "jshint": "~2.5.10"
+  }
+}
